@@ -1,0 +1,187 @@
+/* Laad Sci-Fi font Orbitron via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+/* Algemene styling voor body */
+body {
+    font-family: 'Orbitron', sans-serif; /* Sci-Fi lettertype voor body tekst */
+    color: #E0CBA8; /* Lichtgele kleur passend bij het zand van Dune */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Achtergrond voor de hoofdpagina (index.html) - Mars Landschap */
+body.home {
+    background-image: url('images/mars_landscape.jpg'); /* Mars-achtige achtergrond voor de hoofdpagina */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Achtergrond voor de Informatie Vlucht pagina */
+body.info-vlucht {
+    background-image: url('images/achtegrondzwart.jpg'); /* Ruimte achtergond met een ruimteschip */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Achtergrond voor de Onboard Faciliteiten pagina */
+body.onboard-faciliteiten {
+    background-image: url('images/spaceship_interior.jpg'); /* Binnenkant van een ruimteschip of station */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Achtergrond voor de Ontspanning en Vermaak pagina */
+body.ontspanning-vermaak {
+    background-image: url('images/vr_zone_spaceship.jpg'); /* Virtual reality zone, futuristisch */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Achtergrond voor de kleinere pagina's (bijvoorbeeld contact, over ons) - Sterren */
+body.small-page {
+    background-image: url('images/stars_background.jpg'); /* Sterrenhemel achtergrond voor kleinere pagina's */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Algemene styling voor header */
+header {
+    text-align: center;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #E0CBA8;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif; /* Sci-Fi font voor de kopteksten */
+    color: #E0CBA8;
+}
+
+/* Hoofd sectie styling voor informatie */
+.info-section {
+    margin: 30px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.6); /* Donkere achtergrond */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+    color: #E0CBA8; /* Gouden tinten voor de tekst */
+}
+
+/* Donkere overlay voor de achtergrond van de sectie */
+.info-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Donkere overlay onder de afbeeldingen */
+    border-radius: 15px;
+    z-index: -1; /* Zorgt ervoor dat de overlay onder de inhoud komt */
+}
+
+/* Hover effect voor afbeeldingen */
+.info-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* Layout voor afbeeldingen in een sectie */
+.info-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info-image {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    border: 3px solid #E0CBA8;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.info-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Donkere overlay */
+    border-radius: 12px;
+}
+
+/* Specifieke ruimte voor grotere afbeeldingen zoals het ruimteschip en Mars */
+.spaceship, .mars {
+    width: 300px;
+    margin: 10px;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Footer styling: onderaan het scherm en gecentreerd */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 14px;
+    color: #E0CBA8; /* Gouden kleur voor footer tekst */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigatiebalk styling */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: #E0CBA8; /* Gouden kleur voor de navigatietekst */
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+/* Responsieve styling voor afbeeldingen en tekst */
+@media screen and (max-width: 768px) {
+    .info-image {
+        max-width: 90%;
+    }
+
+    .info-images {
+        flex-direction: column;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
