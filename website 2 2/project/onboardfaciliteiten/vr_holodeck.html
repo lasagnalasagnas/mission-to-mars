@@ -3,17 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VR Holodeck</title>
+    <title>Inflight Entertainment</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('../images/spaceship_interior.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #C0A880;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: rgba(68, 68, 68, 0.8);
+            color: #C0A880;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #C0A880;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .spaceship, .mars {
+            width: 400px;
+            margin: 20px auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .spaceship:hover, .mars:hover {
+            transform: scale(1.2);
+        }
+        .interact-button {
+            background-color: #C0A880;
+            color: #444;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 10px;
+        }
+        .interact-button:hover {
+            background-color: #A68A60;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
-<body>
+<body class="home">
     <header>
-        <h1>VR Holodeck</h1>
+        <h1>Welkom bij Inflight Entertainment</h1>
     </header>
     <nav>
         <ul>
-            <li><a href="../index.html">Hoofdpagina</a></li>
-            <li><a href="index.html">Terug naar Onboard Faciliteiten</a></li>
+            <li><a href="../informatievlucht/index.html">Informatie Vlucht</a></li>
+            <li><a href="../onboardfaciliteiten/index.html">Onboard Faciliteiten</a></li>
         </ul>
     </nav>
     <main>
@@ -22,7 +83,8 @@
             <li>Simulaties: Wandeling op Mars, ruimtemissies, en meer.</li>
             <li>Duur: 30 minuten per sessie.</li>
         </ul>
-        <button class="interact-button" onclick="alert('Je sessie in het VR Holodeck is geboekt!')">Boek een VR-ervaring</button>
+        <button class="interact-button" onclick="window.location.href='https://www.google.com/maps/space/iss/@29.5602853,-95.0853915,2a,75y,335.3h,178.04t/data=!3m7!1e1!3m5!1szChzPIAn4RIAAAQvxgbyEg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-88.03705496005455%26panoid%3DzChzPIAn4RIAAAQvxgbyEg%26yaw%3D335.2978090023807!7i10000!8i5000?entry=ttu&g_ep=EgoyMDI1MDEyMC4wIKXMDSoASAFQAw%3D%3D'">Bekijk het raket!</button>
+        <button class="interact-button" onclick="window.location.href='https://artsandculture.google.com/streetview/international-space-station/WgFE9b04h8A0ww?sv_lng=-95.08506890024346&sv_lat=29.5602786852097&sv_h=120.54796597382898&sv_p=-10.171984523793924&sv_pid=ZICL_3IuQTwAAAQvxgbyOw&sv_z=0.9407542970737962'">Bekijk het ruimtestation!</button>
         <img src="../images/spaceship.png" alt="Ruimteschip" class="spaceship">
         <img src="../images/mars.png" alt="Mars" class="mars">
     </main>

@@ -5,6 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verwachte Tijd</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('../images/spaceship_interior.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #C0A880;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: rgba(68, 68, 68, 0.8);
+            color: #C0A880;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #C0A880;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #444;
+            color: #C0A880;
+        }
+        .spaceship {
+            width: 400px;
+            margin: 20px auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .spaceship:hover {
+            transform: scale(1.2);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,7 +79,7 @@
     </nav>
 
     <main>
-        <p>De verwachte tijd voor de aankomst op Mars is 3 dagen vanaf de huidige locatie.</p>
+        <p id="expected-time">De verwachte tijd voor de aankomst op Mars is 3 dagen vanaf de huidige locatie.</p>
         <p>Bereid je voor op een spectaculaire landing!</p>
         <img src="../images/spaceship.png" alt="Ruimteschip" class="spaceship">
         <img src="../images/mars.png" alt="Mars" class="mars">
@@ -28,5 +88,21 @@
     <footer>
         <p>© 2025 Inflight Entertainment</p>
     </footer>
+
+    <script>
+        function calculateExpectedTime() {
+            const currentTime = new Date();
+            const timezoneOffset = currentTime.getTimezoneOffset() / 60; // in hours
+            const baseTravelTime = 72; // base travel time in hours (3 days)
+            const adjustedTravelTime = baseTravelTime - timezoneOffset;
+            const days = Math.floor(adjustedTravelTime / 24);
+            const hours = adjustedTravelTime % 24;
+
+            document.getElementById('expected-time').textContent = 
+                `De verwachte tijd voor de aankomst op Mars is ${days} dagen en ${hours} uur vanaf de huidige locatie.`;
+        }
+
+        calculateExpectedTime();
+    </script>
 </body>
 </html>

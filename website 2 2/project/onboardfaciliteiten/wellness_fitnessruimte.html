@@ -5,6 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wellness & Fitnessruimte</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('../images/trees.avif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #C0A880;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: rgba(68, 68, 68, 0.8);
+            color: #C0A880;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #C0A880;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .image-container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .gym-image {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            opacity: 0.8; /* Make the image more transparent */
+            border-radius: 15px; /* Make the corners less cornery */
+        }
+        .spaceship-info {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin-top: 20px;
+            display: inline-block;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #444;
+        }
+        select {
+            margin-top: 10px;
+            padding: 5px;
+            font-size: 1em;
+        }
+        .bmi-calculator {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin-top: 20px;
+            display: inline-block;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .bmi-calculator h2 {
+            margin-top: 0;
+        }
+        .bmi-calculator label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .bmi-calculator input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .bmi-calculator button {
+            background-color: #C0A880;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .bmi-calculator button:hover {
+            background-color: #a68a60;
+        }
+        .bmi-calculator p {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,21 +123,56 @@
 
     <main>
         <div class="image-container">
-            <img src="/project/images/gym.jpg" alt="Fitnessruimte" class="gym-image">
+            <img src="/website 2 2/project/images/gym.jpg" alt="Fitnessruimte" class="gym-image">
             <div class="spaceship-info">
                 <p>Onze futuristische fitnessruimte biedt een breed scala aan machines en apparatuur die speciaal zijn ontworpen voor een reis in de ruimte.</p>
-                <select>
+                <select id="machineSelect" onchange="handleMachineChange()">
                     <option value="bodyScan">Body Scan</option>
                     <option value="healingMachine">Healing Machine</option>
                     <option value="cleaningMachine">Cleaning Machine</option>
                 </select>
             </div>
         </div>
+
+        <div class="bmi-calculator">
+            <h2>BMI Calculator</h2>
+            <label for="weight">Gewicht (kg):</label>
+            <input type="number" id="weight" name="weight" required>
+            <br>
+            <label for="height">Lengte (cm):</label>
+            <input type="number" id="height" name="height" required>
+            <br>
+            <button onclick="calculateBMI()">Bereken BMI</button>
+            <p id="bmiResult"></p>
+        </div>
     </main>
 
     <footer>
         <p>© 2025 Inflight Entertainment</p>
     </footer>
+
+    <script>
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value) / 100; // convert cm to meters
+            if (isNaN(weight) || isNaN(height)) {
+                alert('Voer geldige waarden in voor gewicht en lengte.');
+                return;
+            }
+            const bmi = weight / (height * height);
+            let category = '';
+            if (bmi < 18.5) {
+                category = 'ondergewicht';
+            } else if (bmi >= 18.5 && bmi < 25) {
+                category = 'normaal gewicht';
+            } else if (bmi >= 25 && bmi < 30) {
+                category = 'overgewicht';
+            } else {
+                category = 'obesitas';
+            }
+            document.getElementById('bmiResult').innerText = 'Je BMI is: ' + bmi.toFixed(2) + ' (' + category + ')';
+        }
+    </script>
 
 </body>
 </html>

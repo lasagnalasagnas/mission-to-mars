@@ -25,7 +25,7 @@
             <li>Weersomstandigheden in de ruimte</li>
             <li>Snelheid van de vlucht</li>
         </ul>
-        <button class="interact-button" onclick="alert('De actuele aankomsttijd is 15:30 UTC!')">Klik voor de actuele tijd</button>
+        <p id="arrival-time"></p>
         <img src="../images/spaceship.png" alt="Ruimteschip" class="spaceship">
         <img src="../images/mars.png" alt="Mars" class="mars">
     </main>
@@ -33,5 +33,68 @@
     <footer>
         <p>© 2025 Inflight Entertainment</p>
     </footer>
+
+    <script>
+        function calculateArrivalTime() {
+            const utcArrivalTime = new Date();
+            utcArrivalTime.setUTCHours(15, 30, 0); // Set the UTC arrival time to 15:30
+
+            const localArrivalTime = new Date(utcArrivalTime.toLocaleString("en-US", { timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone }));
+            document.getElementById('arrival-time').innerText = `De actuele aankomsttijd is ${localArrivalTime.toLocaleTimeString()} in uw tijdzone!`;
+        }
+
+        calculateArrivalTime();
+    </script>
 </body>
 </html>
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-image: url('../images/spaceship_interior.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #C0A880;
+        margin: 0;
+        padding: 0;
+    }
+    header, footer {
+        background-color: rgba(68, 68, 68, 0.8);
+        color: #C0A880;
+        text-align: center;
+        padding: 1em 0;
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+    nav ul li a {
+        color: #C0A880;
+        text-decoration: none;
+        font-size: 1.2em;
+    }
+    main {
+        padding: 20px;
+        text-align: center;
+    }
+    .spaceship {
+        width: 400px;
+        margin: 20px auto;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    .spaceship:hover {
+        transform: scale(1.2);
+    }
+    .mars {
+        width: 300px;
+        margin: 20px auto;
+        display: block;
+    }
+</style>

@@ -12,13 +12,13 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            color: #444; /* Example color */
+            color: #C0A880; /* Updated color */
             margin: 0;
             padding: 0;
         }
         header, footer {
             background-color: rgba(68, 68, 68, 0.8); /* Example color */
-            color: #fff;
+            color: #C0A880; /* Updated color */
             text-align: center;
             padding: 1em 0;
         }
@@ -26,15 +26,16 @@
             list-style-type: none;
             padding: 0;
             text-align: center;
-            background-color: rgba(85, 85, 85, 0.8); /* Example color */
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
         }
         nav ul li {
             display: inline;
             margin: 0 10px;
         }
         nav ul li a {
-            color: #fff;
+            color: #C0A880; /* Updated color */
             text-decoration: none;
+            font-size: 1.2em; /* Larger text */
         }
         main {
             padding: 20px;
@@ -52,14 +53,15 @@
         }
         th {
             background-color: #444; /* Example color */
-            color: #fff;
+            color: #C0A880; /* Updated color */
         }
-        .spaceship, .mars {
-            width: 150px;
-            margin: 20px;
+        .spaceship {
+            width: 400px; /* Increased width to 2x */
+            margin: 20px auto;
+            display: block;
             transition: transform 0.3s ease;
         }
-        .spaceship:hover, .mars:hover {
+        .spaceship:hover {
             transform: scale(1.2);
         }
     </style>
@@ -99,7 +101,6 @@
             </tr>
         </table>
         <img src="../images/spaceship.png" alt="Ruimteschip" class="spaceship">
-        <img src="../images/mars.png" alt="Mars" class="mars">
     </main>
 
     <footer>
