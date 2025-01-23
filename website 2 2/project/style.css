@@ -1,57 +1,50 @@
-/* Laad Sci-Fi font Orbitron via Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
 
-/* Algemene styling voor body */
 body {
-    font-family: 'Orbitron', sans-serif; /* Sci-Fi lettertype voor body tekst */
-    color: #E0CBA8; /* Lichtgele kleur passend bij het zand van Dune */
+    font-family: 'Orbitron', sans-serif;
+    color: #E0CBA8;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Zorg ervoor dat de body minimaal de hoogte van het scherm beslaat */
-    padding-bottom: 60px; /* Zorgt voor ruimte voor de footer */
+    min-height: 100vh;
+    padding-bottom: 60px;
 }
 
-/* Zorg ervoor dat de main content de resterende ruimte opvult */
 main {
     flex: 1;
 }
 
-/* Achtergrond voor de hoofdpagina (index.html) - Mars Landschap */
 body.home {
-    background-image: url('images/mars_landscape.jpg'); /* Mars-achtige achtergrond voor de hoofdpagina */
+    background-image: url('images/mars_landscape.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 
 body.books {
-    background-image: url('images/amazon-rainforest-1024x576.jpg'); /* Mars-achtige achtergrond voor de hoofdpagina */
+    background-image: url('images/amazon-rainforest-1024x576.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 
-/* Achtergrond voor de Informatie Vlucht pagina */
 body.info-vlucht {
-    background-image: url('images/achtegrondzwart.jpg'); /* Ruimte achtergond met een ruimteschip */
+    background-image: url('images/achtegrondzwart.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 
-/* Achtergrond voor de Onboard Faciliteiten pagina */
 body.onboard-faciliteiten {
-    background-image: url('images/spaceship_interior.jpg'); /* Binnenkant van een ruimteschip of station */
+    background-image: url('images/spaceship_interior.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 
-/* Achtergrond voor de Ontspanning en Vermaak pagina */
 body.ontspanning-vermaak {
-    background-image: url('images/vr_zone_spaceship.jpg'); /* Virtual reality zone, futuristisch */
+    background-image: url('images/vr_zone_spaceship.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -61,37 +54,33 @@ body.ontspanning-vermaak {
     color:#E0CBA8;
 }
 
-/* Achtergrond voor de kleinere pagina's (bijvoorbeeld contact, over ons) - Sterren */
 body.small-page {
-    background-image: url('images/stars_background.jpg'); /* Sterrenhemel achtergrond voor kleinere pagina's */
+    background-image: url('images/stars_background.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 
-/* Algemene styling voor header */
 header {
     text-align: center;
     padding: 50px;
     background-color: rgba(0, 0, 0, 0.7);
     border-bottom: 2px solid #E0CBA8;
     margin-bottom: 20px;
-    font-family: 'Orbitron', sans-serif; /* Sci-Fi font voor de kopteksten */
+    font-family: 'Orbitron', sans-serif;
     color: #E0CBA8;
 }
 
-/* Hoofd sectie styling voor informatie */
 .info-section {
     margin: 30px;
     padding: 30px;
-    background-color: rgba(0, 0, 0, 0.6); /* Donkere achtergrond */
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     position: relative;
-    color: #E0CBA8; /* Gouden tinten voor de tekst */
+    color: #E0CBA8;
 }
 
-/* Donkere overlay voor de achtergrond van de sectie */
 .info-section::after {
     content: "";
     position: absolute;
@@ -99,18 +88,16 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Donkere overlay onder de afbeeldingen */
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-    z-index: -1; /* Zorgt ervoor dat de overlay onder de inhoud komt */
+    z-index: -1;
 }
 
-/* Hover effect voor afbeeldingen */
 .info-image:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
 }
 
-/* Layout voor afbeeldingen in een sectie */
 .info-images {
     display: flex;
     justify-content: center;
@@ -137,11 +124,10 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3); /* Donkere overlay */
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 12px;
 }
 
-/* Specifieke ruimte voor grotere afbeeldingen zoals het ruimteschip en Mars */
 .spaceship, .mars {
     width: 300px;
     margin: 10px;
@@ -150,19 +136,17 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
-/* Footer styling: onderaan het scherm en gecentreerd */
 footer {
     background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
     padding: 20px;
     width: 100%;
     font-size: 14px;
-    color: #E0CBA8; /* Gouden kleur voor footer tekst */
+    color: #E0CBA8;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-    margin-top: auto; /* Zorg ervoor dat de footer altijd onderaan komt */
+    margin-top: auto;
 }
 
-/* Navigatiebalk styling */
 nav {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 15px;
@@ -181,14 +165,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #E0CBA8; /* Gouden kleur voor de navigatietekst */
+    color: #E0CBA8;
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 16px;
 }
 
-/* Responsieve styling voor afbeeldingen en tekst */
 @media screen and (max-width: 768px) {
     .info-image {
         max-width: 90%;
@@ -203,17 +186,15 @@ nav ul li a {
     }
 }
 
-/* Specifieke styling voor de Minigame pagina */
 body.small-page {
-    background-image: url('images/galaxy.jpg'); /* Voeg de galaxy-achtergrond toe */
+    background-image: url('images/galaxy.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 
-/* Styling voor de minigame container */
 .game-container {
-    background-color: rgba(255, 255, 255, 0.8); /* Doorzichtige witte achtergrond achter de minigame */
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     text-align: center;
     border-radius: 10px;
@@ -223,7 +204,6 @@ body.small-page {
     max-width: 900px;
 }
 
-/* Styling voor de iframe zelf (de minigame) */
 .game-frame {
     width: 100%;
     height: 600px;
@@ -231,7 +211,6 @@ body.small-page {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Styling voor de game controls */
 .game-controls {
     margin-top: 20px;
 }
@@ -249,5 +228,5 @@ body.small-page {
 }
 
 .control-button:hover {
-    background-color: #D8B980; /* Lichtere goudkleur bij hover */
+    background-color: #D8B980;
 }
