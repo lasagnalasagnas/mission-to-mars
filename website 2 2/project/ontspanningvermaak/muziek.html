@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muziek</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .video-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .video-card {
+            text-align: center;
+            width: 200px;
+        }
+        .video-thumbnail {
+            width: 100%;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .video-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        video {
+            width: 100%;
+            display: none;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        function playVideo(videoId, thumbnailId) {
+            document.getElementById(thumbnailId).style.display = 'none';
+            const video = document.getElementById(videoId);
+            video.style.display = 'block';
+            video.play();
+            openFullscreen(video); // Open de video in fullscreen zodra deze wordt afgespeeld
+        }
+
+        // Functie om fullscreen te openen
+        function openFullscreen(videoElement) {
+            if (videoElement.requestFullscreen) {
+                videoElement.requestFullscreen();
+            } else if (videoElement.mozRequestFullScreen) { // Firefox
+                videoElement.mozRequestFullScreen();
+            } else if (videoElement.webkitRequestFullscreen) { // Chrome, Safari en Opera
+                videoElement.webkitRequestFullscreen();
+            } else if (videoElement.msRequestFullscreen) { // Internet Explorer/Edge
+                videoElement.msRequestFullscreen();
+            }
+        }
+
+        // Eventlistener om terug te keren naar de originele pagina als fullscreen wordt verlaten
+        document.addEventListener('fullscreenchange', exitFullscreen);
+        document.addEventListener('mozfullscreenchange', exitFullscreen);
+        document.addEventListener('webkitfullscreenchange', exitFullscreen);
+        document.addEventListener('msfullscreenchange', exitFullscreen);
+
+        function exitFullscreen() {
+            if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+                // Als de fullscreen-modus wordt verlaten, verberg de video en toon de thumbnail weer
+                const videos = document.querySelectorAll('video');
+                const thumbnails = document.querySelectorAll('.video-thumbnail');
+                videos.forEach(video => video.style.display = 'none');
+                thumbnails.forEach(thumbnail => thumbnail.style.display = 'block');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Films & Series</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Hoofdpagina</a></li>
+            <li><a href="index.html">Terug naar Ontspanning en Vermaak</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>Bekijk een selectie van de beste films en series aan boord:</p>
+        <div class="video-gallery">
+            <div class="video-card">
+                <img id="thumbnail-1" src="/project/images/spiderman.png" alt="Video 1" class="video-thumbnail" onclick="playVideo('video-1', 'thumbnail-1')">
+                <video id="video-1" controls>
+                    <source src="/project/videos/placeholder-16x9.mp4" type="video/mp4">
+                    Uw browser ondersteunt geen video afspelen.
+                </video>
+                <p>spiderman</p>
+            </div>
+            <div class="video-card">
+                <img id="thumbnail-2" src="/project/images/thor.jpg" alt="Video 2" class="video-thumbnail" onclick="playVideo('video-2', 'thumbnail-2')">
+                <video id="video-2" controls>
+                    <source src="../videos/placeholder-4x5.mp4" type="video/mp4">
+                    Uw browser ondersteunt geen video afspelen.
+                </video>
+                <p>thor</p>
+            </div>
+            <div class="video-card">
+                <img id="thumbnail-3" src="/project/images/venom.jpg" alt="Video 3" class="video-thumbnail" onclick="playVideo('video-3', 'thumbnail-3')">
+                <video id="video-3" controls>
+                    <source src="../videos/placeholder-9x16.mp4" type="video/mp4">
+                    Uw browser ondersteunt geen video afspelen.
+                </video>
+                <p>Vrnom</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Inflight Entertainment</p>
+    </footer>
+</body>
+</html>
+
+    <footer>
+        <p>© 2025 Inflight Entertainment</p>
+    </footer>
+</body>
+</html>

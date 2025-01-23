@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Books</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        main {
+            text-align: center;
+        }
+        .book-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .book-container a {
+            text-decoration: none;
+        }
+        .book-container img {
+            width: 150px;
+            height: 220px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .book-container img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .book-title {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #E0CBA8;;
+        }
+    </style>
+</head>
+<body>
+    <body class="books"></body>
+    <header>
+        <h1>E-Books</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Hoofdpagina</a></li>
+            <li><a href="index.html">Terug naar Ontspanning en Vermaak</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>Blader door een verzameling inspirerende e-books:</p>
+        <div class="book-container">
+            <a href="/project/books/dracula/dracula.html">
+                <img src="/project/books/dracula/images/cover.jpg" alt="Dracula">
+                <p class="book-title">Dracula</p>
+            </a>
+            <a href="/project/books/moby-dick/pg2701-images.html">
+                <img src="/project/books/moby-dick/2701-cover.png" alt="Moby-Dick">
+                <p class="book-title">Moby-Dick</p>
+            </a>
+            <a href="/project/books/romeo-and-juliet/romeo-and-juliet.html">
+                <img src="/project/books/romeo-and-juliet/images/cover.jpg" alt="Romeo and Juliet">
+                <p class="book-title">Romeo and Juliet</p>
+            </a>
+            <a href="/project/books/the-great-gatsby/the-great-gatsby.html">
+                <img src="/project/books/the-great-gatsby/images/cover.jpg" alt="The Great Gatsby">
+                <p class="book-title">The Great Gatsby</p>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Inflight Entertainment</p>
+    </footer>
+</body>
+</html>
