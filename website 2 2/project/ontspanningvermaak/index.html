@@ -7,12 +7,12 @@
     
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-image: url('../images/spaceship_interior.jpg');
+            font-family: 'Orbitron', sans-serif; /* Updated font */
+            background-image: url('/website 2 2/project/images/amazon-rainforest-1024x576.jpg'); /* Updated image */
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            color: #C0A880;
+            color: #C0A880; /* Updated color */
             margin: 0;
             padding: 0;
             min-height: 100vh;
@@ -20,8 +20,8 @@
             padding-bottom: 60px; /* Height of the footer */
         }
         header, footer {
-            background-color: rgba(68, 68, 68, 0.8);
-            color: #C0A880;
+            background-color: rgba(68, 68, 68, 0.8); /* Example color */
+            color: #C0A880; /* Updated color */
             text-align: center;
             padding: 1em 0;
         }
@@ -34,23 +34,44 @@
             list-style-type: none;
             padding: 0;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
         }
         nav ul li {
             display: inline;
-            margin: 0 10px;
+            margin: 0 20px; /* Increased margin */
         }
         nav ul li a {
-            color: #C0A880;
+            color: #C0A880; /* Updated color */
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.5em; /* Larger text */
+            padding: 10px 20px; /* Increased padding */
         }
         main {
             padding: 20px;
             text-align: center;
         }
+        .transparent-box {
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #444; /* Example color */
+            color: #C0A880; /* Updated color */
+        }
         .spaceship {
-            width: 400px;
+            width: 600px; /* Increased width */
             margin: 20px auto;
             display: block;
             transition: transform 0.3s ease;
@@ -60,10 +81,12 @@
         }
         .image-container {
             text-align: center;
+            margin-top: 20px; /* Added margin-top to center under text */
         }
         .image-container img {
             margin: 10px;
         }
+        
     </style>
 </head>
 <body class="ontspanning-vermaak">
@@ -84,7 +107,9 @@
     </nav>
 
     <main>
-        <p>Ervaar ultieme ontspanning en vermaak tijdens de reis. Ontdek spannende mini-games, films, muziek en meer!</p>
+        <div class="transparent-box">
+            <p>Ervaar ultieme ontspanning en vermaak tijdens de reis. Ontdek spannende mini-games, films, muziek en meer!</p>
+        </div>
         <div class="image-container">
             <img src="../images/spaceship.png" alt="Ruimteschip" class="spaceship">
         </div>
